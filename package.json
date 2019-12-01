@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx http-server -s -o"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "http-server": "^0.12.0",
     "jest": "^24.9.0"
   }
 }
