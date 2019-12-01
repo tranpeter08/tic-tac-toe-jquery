@@ -12,30 +12,30 @@ class Board {
 
   get boxes() {
     const size = this.grid.length;
-    let rows = '';
+    let boxes = '';
 
     for (let i = 0; i < size; i++) {
-      let cols = '';
       for (let j = 0; j < size; j++) {
-        cols += new Box(j, i).element;
+        boxes += new Box(j, i).element;
       }
-      rows += `<div class="row" >${cols}</div>`;
+      // rows += `<div class="row" >${cols}</div>`;
     }
 
-    return rows;
+    return boxes;
   }
 
   $boxClick() {
     const game = this;
 
-    $('.board').on('click', '.box', function() {
-      game.pos = $(this).data();
-      const $mark = $(this).find('.mark');
+    $('.board').on('click', '.mark', function() {
+      const $mark = $(this);
+      game.pos = $mark.data();
 
       if (!game.isEmptyBox($mark)) {
         return;
       }
 
+      $mark.attr('disabled', true);
       game.moves++;
       game.markBox($mark);
       game.setGrid();
@@ -114,7 +114,11 @@ class Board {
   }
 
   endGame() {
-    $('.board').off();
+    $('.board')
+      .find('.mark')
+      .each(function() {
+        $(this).attr('disabled', true);
+      });
     this.header.winner(this.player);
   }
 
@@ -124,7 +128,8 @@ class Board {
 
   render() {
     $('#root').html(
-      `<div class="board">${this.header.element}${this.boxes}</div>`
+      `${this.header.element}
+      <div class="board">${this.boxes}</div>`
     );
 
     this.attachEventListeners();
