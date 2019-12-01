@@ -1,7 +1,7 @@
 class Header {
   constructor(player = 'x') {
     this.player = player;
-    this.element = `<h2 id="header">Current Player: <span id="player">${player}<span></h2>`;
+    this.element = `<h2 id="header">Current Move: <span id="player">${player}<span></h2>`;
   }
 
   update(player) {
