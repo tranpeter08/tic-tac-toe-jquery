@@ -1,17 +1,35 @@
-.row {
-  display: flex;
-  flex-flow: wrap;
+* {
+  box-sizing: border-box;
 }
 
-.col {
-  flex: 0 0 150px;
+#root {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.board {
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 600px;
+  width: 100%;
 }
 
 .box {
   height: 100px;
-  margin: 5px;
+  margin: 10px;
   border: 1px solid black;
   display: flex;
+  flex: 1 0 33%;
+  max-width: calc(33.33% - 20px);
   justify-content: center;
   align-items: center;
+}
+
+.mark,
+.mark:disabled {
+  color: black;
+  font-size: 20px;
+  height: 100%;
+  width: 100%;
 }
