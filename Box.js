@@ -6,7 +6,7 @@ class Box {
         data-col="${column}" 
         data-row="${row}"
       >
-        <div class="mark">${char}</div>
+        <button class="mark">${char}</button>
       </div>`;
   }
 }
