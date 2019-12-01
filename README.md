@@ -19,5 +19,5 @@ A Tic Tac Toe game created with jQuery for fun.
 3. Start the server and have fun :)
 
 ```bash
-  npm start
+  npm run dev
 ```
