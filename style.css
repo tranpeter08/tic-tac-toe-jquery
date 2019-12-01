@@ -1,0 +1,17 @@
+.row {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.col {
+  flex: 0 0 150px;
+}
+
+.box {
+  height: 100px;
+  margin: 5px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
