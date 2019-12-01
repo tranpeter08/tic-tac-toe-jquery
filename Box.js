@@ -2,11 +2,13 @@ class Box {
   constructor(column, row, char = '') {
     this.element = `
       <div 
-        class="col box" 
-        data-col="${column}" 
-        data-row="${row}"
+        class="box" 
       >
-        <button class="mark">${char}</button>
+        <button
+          data-col="${column}" 
+          data-row="${row}"
+          class="mark"
+        >${char}</button>
       </div>`;
   }
 }
